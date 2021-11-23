@@ -1,11 +1,12 @@
-class Producto {
-    constructor(nombre, precio) {
-        this.nombre = nombre;
-        this.precio = precio;
-    }
-}
-
 let productosCarrito = [];
+let listaCarrito = [];
+let boton = $(".btnComprar");
+boton.on("click", agregarProducto);
+let btnVaciar = $("#botonVaciar");
+btnVaciar.on("click", borrarCarrito);
+let carrito = $("#carrito");
+
+
 
 const productos = [
     { producto: "almohadones", id: "almohadones", precio: 700, cantidad: 1},
@@ -16,26 +17,6 @@ const productos = [
     { producto: "buzos", id: "buzos", precio: 2600, cantidad: 1 },
 ];
 
-
-
-let listaCarrito = [];
-
-listaCarrito.push(new Producto("Llavero", 300));
-listaCarrito.push(new Producto("Barbijo", 300));
-listaCarrito.push(new Producto("Buzo", 2300));
-listaCarrito.push(new Producto("Remera", 900));
-listaCarrito.push(new Producto("Cartuchera", 450));
-listaCarrito.push(new Producto("Almohadon", 700));
-
-
-console.log(listaCarrito);
-
-
-let boton = $(".btnComprar");
-boton.on("click", agregarProducto);
-let btnVaciar = $("#botonVaciar");
-btnVaciar.on("click", borrarCarrito);
-let carrito = $("#carrito");
 
 function agregarProducto() {
     console.log(this.id);
@@ -59,8 +40,11 @@ function agregarProducto() {
     }
     
     mostrarTotal();
+
     localStorage.setItem('carrito', JSON.stringify(productosCarrito))
 }
+
+    
 
 
 function borrarCarrito() {
@@ -77,4 +61,13 @@ function mostrarTotal() {
     carrito.append(c);
 }
 
+
+document.addEventListener('DOMContentLoaded', () =>{
+    
+    if (localStorage.getItem('carrito')){
+        carrito = JSON.parse(localStorage.getItem('carrito'))
+    }
+}
+    
+)
 document.querySelector("#gracias").style.color = "white";

@@ -1,0 +1,32 @@
+[
+    {
+      "precio": 700,
+      "id": 1,
+      "title": "Almohadones"
+    },
+    {
+      "precio": 1000,
+      "id": 2,
+      "title": "Remeras"
+    },
+    {
+      "precio": 300,
+      "id": 3,
+      "title": "Llaveros"
+    },
+    {
+      "precio": 250,
+      "id": 4,
+      "title": "Barbijos"
+    },
+    {
+      "precio": 1000,
+      "id": 5,
+      "title": "Sets"
+    },
+    {
+      "precio": 2300,
+      "id": 6,
+      "title": "Buzos"
+    }
+  ]
