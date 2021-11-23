@@ -1,5 +1,6 @@
 $("body").prepend('<p class="animacion" style="display: none" >No dudes en comunicarte!</p>');
 $("body").prepend('<p class="animacion2" style="display: none" >Redes al final de la pagina ♥</p>');
+$("p").show();
 
 $(".animacion").css({
     "font-family": "Roboto Mono, monospace",
